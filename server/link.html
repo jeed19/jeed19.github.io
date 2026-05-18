@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>† 友情の証 † リンク集</title>
+</head>
+<body bgcolor="#000000" text="#FFFFFF" link="#00FFFF" vlink="#FF00FF">
+
+    <center>
+        <h2><font color="#FFFF00">■ 相互リンク集 ■</font></h2>
+        <p>お世話になっているサイト様です。無断リンク禁止（嘘ですｗ）</p>
+
+        <hr size="1" width="80%">
+
+        <table border="1" cellspacing="0" cellpadding="5" width="90%" bordercolor="#FFFFFF">
+            <thead>
+                <tr bgcolor="#333333">
+                    <th>NO.</th>
+                    <th>サイト名（仮）</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+            <tbody id="link-table-body"></tbody>
+        </table>
+
+        <br>
+        <a href="index.html">←TOPに戻る</a>
+    </center>
+
+    <p align="right">
+        <font size="1">since 2026/04/13</font>
+    </p>
+
+    <script>
+        const tableBody = document.getElementById('link-table-body');
+        
+        // 160から180までループ
+        for (let i = 160; i <= 180; i++) {
+            // 160番を「0」からスタートする通し番号に計算
+            const no = i - 160; 
+            const ip = `172.16.61.${i}`;
+            
+            // 新しい行をつくる
+            const tr = document.createElement('tr');
+            
+            // 行の中にデータを流し込む
+            tr.innerHTML = `
+                <td align="center">${no}</td>
+                <td>同志${no}</td>
+                <td>
+                    <a href="http://${ip}/">[TOP]</a> / 
+                    <a href="http://${ip}/wordpress/">[WP]</a>
+                </td>
+            `;
+            
+            // 組み立てた行をテーブルに追加
+            tableBody.appendChild(tr);
+        }
+    </script>
+
+</body>
+</html>

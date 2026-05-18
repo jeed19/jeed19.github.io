@@ -1,0 +1,168 @@
+/* --- 基本リセット & 共通設定 --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+a {
+    color: #0056b3;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- ヘッダー --- */
+header {
+    background-color: #1a252f;
+    color: #fff;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+}
+nav ul li {
+    margin-left: 1.5rem;
+}
+nav ul li a {
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+/* --- メインビジュアル --- */
+.hero {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.1rem;
+    color: #bdc3c7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- コンテンツエリア共通 --- */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+section {
+    margin-bottom: 3.5rem;
+}
+h3 {
+    font-size: 1.6rem;
+    color: #1a252f;
+    border-left: 5px solid #2980b9;
+    padding-left: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- プロフィール --- */
+.profile-box {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.profile-box p {
+    margin-bottom: 1rem;
+}
+
+/* --- ポートフォリオ（作品リスト） --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.portfolio-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+.portfolio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.card-content {
+    padding: 1.5rem;
+}
+.card-tag {
+    display: inline-block;
+    background: #e1f5fe;
+    color: #0288d1;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #1a252f;
+}
+.card-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    height: 4.8em;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.btn-link {
+    display: inline-block;
+    background-color: #2980b9;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+}
+.btn-link:hover {
+    background-color: #216a9b;
+    text-decoration: none;
+}
+
+/* --- フッター --- */
+footer {
+    background-color: #1a252f;
+    color: #7f8c8d;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+    header { flex-direction: column; text-align: center; }
+    nav ul { margin-top: 1rem; }
+    .hero h2 { font-size: 1.8rem; }
+}
