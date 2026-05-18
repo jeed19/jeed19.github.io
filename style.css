@@ -166,3 +166,19 @@ footer {
     nav ul { margin-top: 1rem; }
     .hero h2 { font-size: 1.8rem; }
 }
+
+
+/* --- 平成風リンク（隠しネタ用） --- */
+.heisei-link-container {
+    margin-bottom: 0.5rem;
+}
+.heisei-link {
+    font-size: 0.75rem;
+    color: #566573; /* フッターの背景に馴染む目立たない色 */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.heisei-link:hover {
+    color: #bdc3c7; /* ホバーした時だけ少し見やすくなる */
+    text-decoration: underline;
+}

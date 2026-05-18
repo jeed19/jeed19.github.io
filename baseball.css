@@ -1,0 +1,189 @@
+/* ==========================================================================
+   詳細ページ（baseball.html）用スタイル
+   ========================================================================== */
+
+/* 左右いっぱいに広げすぎないワイドコンテナ */
+.container-wide {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+    background-color: #edf2f7;
+    padding: 0.75rem 0;
+    font-size: 0.85rem;
+    color: #4a5568;
+}
+
+/* メインレイアウト：PC時は2カラム */
+.main-content {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+/* サイドナビ */
+.side-nav {
+    width: 250px;
+    flex-shrink: 0;
+}
+.side-nav ul {
+    list-style: none;
+    position: sticky;
+    top: 20px; /* スクロール時に追従 */
+    background: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+.side-nav li {
+    margin-bottom: 0.75rem;
+}
+.side-nav a {
+    color: #4a5568;
+    font-size: 0.95rem;
+    display: block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+.side-nav a:hover {
+    background-color: #edf2f7;
+    color: #2b6cb0;
+    text-decoration: none;
+}
+
+/* メイン文書エリア */
+.doc-body {
+    flex-grow: 1;
+    min-width: 0; /* flex項目のはみ出し防止 */
+}
+.doc-body section {
+    margin-bottom: 4rem;
+}
+.doc-body h2 {
+    font-size: 1.75rem;
+    color: #1a252f;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.doc-body h3 {
+    border-left: none;
+    padding-left: 0;
+    font-size: 1.25rem;
+    margin: 1.5rem 0 1rem 0;
+    color: #2c3e50;
+}
+
+/* 詳細用カード記述 */
+.card-detail {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.card-detail p {
+    margin-bottom: 1.2rem;
+}
+
+/* スペック表（テーブル） */
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+.spec-table th, .spec-table td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    font-size: 0.95rem;
+}
+.spec-table th {
+    background-color: #f7fafc;
+    width: 25%;
+    text-align: left;
+    color: #4a5568;
+}
+
+/* 画像・図のプレースホルダー */
+.screenshot-area, .diagram-area {
+    margin: 1.5rem 0;
+}
+.img-placeholder {
+    background-color: #edf2f7;
+    border: 2px dashed #cbd5e0;
+    padding: 4rem 1rem;
+    text-align: center;
+    color: #718096;
+    font-size: 0.9rem;
+    border-radius: 6px;
+}
+
+/* 特徴ブロック */
+.feature-block {
+    background-color: #f7fafc;
+    padding: 1.25rem;
+    border-radius: 6px;
+    border-left: 4px solid #4a5568;
+    margin-bottom: 1.5rem;
+}
+.feature-block h4 {
+    font-size: 1.1rem;
+    color: #1a252f;
+    margin-bottom: 0.5rem;
+}
+.feature-block p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+/* コードブロック */
+.code-header {
+    background-color: #2d3748;
+    color: #edf2f7;
+    padding: 0.5rem 1rem;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 0.85rem;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-top: 1.5rem;
+}
+.doc-body pre {
+    background-color: #1a202c;
+    color: #fff;
+    padding: 1rem;
+    overflow-x: auto;
+    font-family: Consolas, Monaco, monospace;
+    font-size: 0.9rem;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+/* 箇条書き */
+.doc-body ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.doc-body li {
+    margin-bottom: 0.5rem;
+}
+
+/* レスポンシブ（詳細ページ用） */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .side-nav {
+        width: 100%;
+    }
+    .side-nav ul {
+        position: static;
+    }
+    .spec-table th {
+        width: 35%;
+    }
+}

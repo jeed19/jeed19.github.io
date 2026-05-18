@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロ野球ペナントシミュレーター 詳細 | ポートフォリオ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="baseball.css">
+</head>
+<body>
+
+    <!-- ヘッダー（index.htmlと共通） -->
+    <header>
+        <h1>【あなたの名前】 Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Top</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#works">Works</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- パンくずリスト（ナビゲーション用） -->
+    <div class="breadcrumb">
+        <div class="container-wide">
+            <a href="index.html">Top</a> &gt; プロ野球ペナントシミュレーター 詳細
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <div class="container-wide main-content">
+        
+        <!-- サイドナビ（目次） -->
+        <aside class="side-nav">
+            <ul>
+                <li><a href="#overview">1. 作品概要</a></li>
+                <li><a href="#architecture">2. 設計・クラス図</a></li>
+                <li><a href="#features">3. 主要ロジック・こだわり</a></li>
+                <li><a href="#code">4. ソースコード（一部公開）</a></li>
+            </ul>
+        </aside>
+
+        <!-- メイン文書エリア -->
+        <main class="doc-body">
+            
+            <!-- 1. 作品概要 -->
+            <section id="overview">
+                <h2>1. プロ野球ペナントシミュレーター 作品概要</h2>
+                <div class="card-detail">
+                    <p>Javaで開発した、プロ野球のペナントレースをシミュレートするシステムです。単なるランダムな勝敗判定ではなく、選手個人の詳細なスタッツ、試合内の状況（カウント、ランナー）、さらには物理的な軌道計算や野手の反応速度ロジックなどを組み込み、精緻な試合展開を再現することを目指して開発しています。</p>
+                    
+                    <table class="spec-table">
+                        <tr>
+                            <th>開発言語 / 環境</th>
+                            <td>Java (JDK 17)</td>
+                        </tr>
+                        <tr>
+                            <th>主な技術要素</th>
+                            <td>オブジェクト指向設計（各種デザインパターン）、ファイルI/O、物理シミュレーションロジック</td>
+                        </tr>
+                        <tr>
+                            <th>開発体制・期間</th>
+                            <td>個人開発 / 2026年2月 〜 現在継続中</td>
+                        </tr>
+                    </table>
+
+                    <div class="screenshot-area">
+                        <!-- ここにスクリーンショット画像を配置 -->
+                        <div class="img-placeholder">【ここにシステムの実行画面（コンソールやGUI）のスクリーンショットを配置】</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 設計・クラス図 -->
+            <section id="architecture">
+                <h2>2. 設計・クラス図</h2>
+                <div class="card-detail">
+                    <p>保守性と拡張性を高めるため、オブジェクト指向の原則に則った設計を行っています。役割ごとにクラスを明確に分離し、密結合を避ける設計を意識しました。</p>
+                    
+                    <div class="diagram-area">
+                        <!-- ここにUMLクラス図の画像を配置 -->
+                        <div class="img-placeholder">【ここにUMLクラス図の画像（PlantUMLなどで出力したもの）を配置】</div>
+                    </div>
+
+                    <h3>設計におけるポイント</h3>
+                    <ul>
+                        <li><strong>堅牢なエラーハンドリング:</strong> 各種設定ファイルや選手データの読み込み時、不具合を未然に防ぐ「fail-fast（早期失敗）」の原則に基づき、厳格なバリデーションチェックを実装しています。</li>
+                        <li><strong>柔軟な戦略の切り替え:</strong> 試合展開に応じた戦術変更ロジックには、デザインパターン（Strategyパターンなど）の適用を検討・配置し、コードの変更に強い構造にしています。</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 3. 主要ロジック・こだわり -->
+            <section id="features">
+                <h2>3. 主要ロジック・技術的こだわり</h2>
+                <div class="card-detail">
+                    <div class="feature-block">
+                        <h4>① 物理軌道と野手連動ロジック</h4>
+                        <p>打球のシミュレーションには、投球速度・打球角度・スピン量を考慮した「ホークアイ」ライクな軌道計算アルゴリズムを採用。さらに、野手ごとの守備位置、反応時間、移動速度（走力）をパラメータ化し、打球の到達点と野手の到達時間を比較してヒットか凡退かを判定するリアルなインターセプト判定を実装しました。</p>
+                    </div>
+
+                    <div class="feature-block">
+                        <h4>② ドラフト・選手育成ロジック</h4>
+                        <p>ペナントシミュレーターの醍醐味である「複数年の運用」に耐えうるよう、独自のドラフト思考アルゴリズムや経年劣化・急成長などの育成ロジックを搭載。各球団の補強ポイント（弱点ポジション）を自動解析し、最適な選手を指名するロジックを組んでいます。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. ソースコード（一部公開） -->
+            <section id="code">
+                <h2>4. ソースコード（主要クラスの一部抜粋）</h2>
+                <div class="card-detail">
+                    <p>著作権および独自のロジック保護のため全体公開はしていませんが、オブジェクト指向の設計思想が最も現れているコア部分のコードを一部抜粋して公開します。</p>
+                    
+                    <div class="code-header">MatchDirector.java（試合進行・バリデーションの一部）</div>
+<pre><code>// 実際のJavaコードをここに綺麗に配置
+public class MatchDirector {
+    private final Team homeTeam;
+    private final Team awayTeam;
+
+    public MatchDirector(Team homeTeam, Team awayTeam) {
+        // fail-fastなバリデーション
+        Objects.requireNonNull(homeTeam, "ホームチームが指定されていません。");
+        Objects.requireNonNull(awayTeam, "アウェイチームが指定されていません。");
+        if (homeTeam.equals(awayTeam)) {
+            throw new IllegalArgumentException("同一チームでの試合は設定できません。");
+        }
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+    }
+    
+    // 試合進行ロジックが続く...
+}</code></pre>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- フッター（index.htmlと共通） -->
+    <footer>
+        <p>&copy; 2026 【あなたの名前】. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
