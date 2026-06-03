@@ -64,36 +64,12 @@
                             <td>個人開発 / 2026年2月 〜 現在継続中</td>
                         </tr>
                     </table>
-
-                    <div class="screenshot-area">
-                        <!-- ここにスクリーンショット画像を配置 -->
-                        <div class="img-placeholder">【ここにシステムの実行画面（コンソールやGUI）のスクリーンショットを配置】</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 2. 設計・クラス図 -->
-            <section id="architecture">
-                <h2>2. 設計・クラス図</h2>
-                <div class="card-detail">
-                    <p>保守性と拡張性を高めるため、オブジェクト指向の原則に則った設計を行っています。役割ごとにクラスを明確に分離し、密結合を避ける設計を意識しました。</p>
-                    
-                    <div class="diagram-area">
-                        <!-- ここにUMLクラス図の画像を配置 -->
-                        <div class="img-placeholder">【ここにUMLクラス図の画像（PlantUMLなどで出力したもの）を配置】</div>
-                    </div>
-
-                    <h3>設計におけるポイント</h3>
-                    <ul>
-                        <li><strong>堅牢なエラーハンドリング:</strong> 各種設定ファイルや選手データの読み込み時、不具合を未然に防ぐ「fail-fast（早期失敗）」の原則に基づき、厳格なバリデーションチェックを実装しています。</li>
-                        <li><strong>柔軟な戦略の切り替え:</strong> 試合展開に応じた戦術変更ロジックには、デザインパターン（Strategyパターンなど）の適用を検討・配置し、コードの変更に強い構造にしています。</li>
-                    </ul>
                 </div>
             </section>
 
             <!-- 3. 主要ロジック・こだわり -->
             <section id="features">
-                <h2>3. 主要ロジック・技術的こだわり</h2>
+                <h2>2. 主要ロジック・技術的こだわり</h2>
                 <div class="card-detail">
                     <div class="feature-block">
                         <h4>① 物理軌道と野手連動ロジック</h4>
@@ -107,40 +83,38 @@
                 </div>
             </section>
 
+            <section id="features">
+                <h2>3. 苦労した点</h2>
+                <div class="card-detail">
+                    <div class="feature-block">
+                        <h4>① ゴロの打球に対して、追いつける最短経路の算出</h4>
+                        <p>内野ゴロは4秒間の勝負。しっかり最短経路で打球を捕りにいかないと、内野安打が量産されてしまう。<br>
+                        ▼ただし、打球は徐々に減速する（しないと止まらない）。単純計算で打球位置予測はできない。<br>
+                        →何秒時点なら打球はここ、と計算する必要がある。<br>
+                        　→線形探索だとやや重い。そこで二分探索としたが、単純な二分探索にすると、打球が一定速度ではないため、不具合が生じた（打球全体の中間時間をとると、進捗は中間より先の位置にあり、追いつけないという判定になった）<br>
+                        　→打球軌道に対する最短距離へ移動したら、捕れるかどうか？で二分。捕れるならそれより前を探索し、捕れないならそれより後を探索。</p>
+                    </div>
+                </div>
+            </section>
+
             <!-- 4. ソースコード（一部公開） -->
-            <section id="code">
+            <!-- <section id="code">
                 <h2>4. ソースコード（主要クラスの一部抜粋）</h2>
                 <div class="card-detail">
-                    <p>著作権および独自のロジック保護のため全体公開はしていませんが、オブジェクト指向の設計思想が最も現れているコア部分のコードを一部抜粋して公開します。</p>
                     
                     <div class="code-header">MatchDirector.java（試合進行・バリデーションの一部）</div>
 <pre><code>// 実際のJavaコードをここに綺麗に配置
 public class MatchDirector {
-    private final Team homeTeam;
-    private final Team awayTeam;
-
-    public MatchDirector(Team homeTeam, Team awayTeam) {
-        // fail-fastなバリデーション
-        Objects.requireNonNull(homeTeam, "ホームチームが指定されていません。");
-        Objects.requireNonNull(awayTeam, "アウェイチームが指定されていません。");
-        if (homeTeam.equals(awayTeam)) {
-            throw new IllegalArgumentException("同一チームでの試合は設定できません。");
-        }
-        this.homeTeam = homeTeam;
-        this.awayTeam = awayTeam;
-    }
-    
-    // 試合進行ロジックが続く...
 }</code></pre>
                 </div>
-            </section>
+            </section> -->
 
         </main>
     </div>
 
     <!-- フッター（index.htmlと共通） -->
     <footer>
-        <p>&copy; 2026 【あなたの名前】. All Rights Reserved.</p>
+        <!-- <p>&copy; 2026 【あなたの名前】. All Rights Reserved.</p> -->
     </footer>
 
 </body>
