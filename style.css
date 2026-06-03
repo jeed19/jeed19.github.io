@@ -182,3 +182,28 @@ footer {
     color: #bdc3c7; /* ホバーした時だけ少し見やすくなる */
     text-decoration: underline;
 }
+img {
+    width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* --- カード内の画像スタイル --- */
+.card-img-wrapper {
+    width: 80%;
+    /* height: 180px; 画像を表示する高さを固定 */
+    overflow: hidden;
+    border-bottom: 1px solid #e2e8f0;
+    background-color: #f8f9fa;
+}
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 枠線に合わせて画像を綺麗にフィットさせる（アスペクト比維持） */
+    object-position: top center; /* システムの上部（ヘッダーや検索バー）が見えるように調整 */
+    transition: transform 0.2s;
+}
+/* カードホバー時に画像を少しズームする演出（お好みで） */
+/* .portfolio-card:hover .card-img-wrapper img {
+    transform: scale(1.03);
+} */
